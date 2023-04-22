@@ -62,6 +62,14 @@
             flex-direction: column;
         }
 
+        .form a{
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 5.2rem;
+        }
+
         .logo {
             width: 15rem;
             margin-bottom: 4.8rem;
@@ -100,6 +108,11 @@
             font-size: var(--md);
             padding: 0.6rem;
             margin-bottom: 1.2rem;
+            
+        }
+
+        .input-email{
+            margin-bottom: 2.2rem;
         }
 
         .primary-button{
@@ -107,10 +120,27 @@
             border-radius: 0.8rem;
             border: none;
             color: var(----white);
-            width: 50%;
+            width: 100%;
             font-weight: bold;
             height: 5rem;
+            font-size: var(--md);
             
+        }
+
+        .secondary-button{
+            background-color: var(----white);
+            border-radius: 0.8rem;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            font-weight: bold;
+            height: 5rem;
+            font-size: var(--md);
+            
+        }
+
+        .primary-button:hover{
+            cursor: grab;
         }
 
         .login-button{
@@ -122,6 +152,10 @@
         @media (max-width: 640px) {
             .logo{
                 display: block;
+            }
+
+            .secondary-button {
+                margin-top: 15rem;
             }
         }
     </style>
@@ -138,12 +172,12 @@
                 <input type="email" class="input input-email" placeholder="carlos@example.com" id="email">
                 <label for="password" class="label">Password</label>
                 <input type="password" class="input input-password" placeholder="*******" id="password">
-                <input type="submit" value="Confirm" class="primary-button login-button">
+                <input type="submit" value="Login" class="primary-button login-button">
 
                 <a href="/">Forgot my password</a>
             </form>
 
-            <button class="secondary-button signup-button"></button>
+            <button class="secondary-button signup-button">Sign Up</button>
         </div>
     </div>
 
