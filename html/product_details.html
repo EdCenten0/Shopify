@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Shopify</title>
+    <style>
+      :root {
+        --white: #ffffff;
+        --black: #000000;
+        --dark: #232830;
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd9b2;
+        --sm: 1.4rem;
+        --md: 1.6rem;
+        --lg: 1.8rem;
+      }
+
+      * {
+        font-size: 62.5%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      body {
+        font-family: "Quicksand", sans-serif;
+        margin: 0;
+      }
+
+      .primary-button {
+        background-color: var(--hospital-green);
+        border-radius: 0.8rem;
+        border: none;
+        color: var(--white);
+        width: 100%;
+        font-weight: bold;
+        height: 5rem;
+        font-size: var(--md);
+      }
+
+      .add-to-cart-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .product-detail {
+        width: 36rem;
+        padding-bottom: 2.4rem;
+        position: absolute;
+        right: 0;
+      }
+
+      .product-detail-close {
+        background-color: var(--white);
+        position: absolute;
+        top: 2.4rem;
+        left: 2.4rem;
+        z-index: 2;
+        padding: 1.2rem;
+        border-radius: 50%;
+      }
+
+      .product-detail-close:hover {
+        cursor: pointer;
+      }
+
+      .product-detail img:nth-child(2) {
+        width: 100%;
+        height: 36rem;
+        object-fit: cover;
+        border-radius: 0 0 2rem 2rem;
+      }
+
+      .product-info {
+        margin: 2.4rem 2.4rem 0 2.4rem;
+      }
+
+      .product-info p:nth-child(1) {
+        font-weight: bold;
+        font-size: var(--md);
+        margin-top: 0;
+        margin-bottom: 0.4rem;
+      }
+
+      .product-info p:nth-child(2) {
+        color: var(--very-light-pink);
+        font-size: var(--md);
+        margin-top: 0;
+        margin-bottom: 3.6rem;
+      }
+
+      .product-info p:nth-child(3) {
+        font-size: var(--sm);
+        margin-bottom: 0;
+        margin-bottom: 3.6rem;
+      }
+
+      @media (max-width: 640px) {
+        .product-detail {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="product-detail">
+      <div class="product-detail-close">
+        <img src="/img/icons/icon_close.png" alt="close" />
+      </div>
+      <img
+        src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        alt="byke"
+      />
+      <div class="product-info">
+        <p>$35</p>
+        <p>Bike</p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident
+          similique consectetur aperiam nostrum aut sit eum perspiciatis nam
+          autem vero officiis blanditiis exercitationem aspernatur, error
+          voluptates velit debitis quod. Reiciendis!
+        </p>
+        <button class="primary-button add-to-cart-button">
+          <img src="/img/icons/bt_add_to_cart.svg" alt="bt_add_to_cart" />Add to
+          cart
+        </button>
+      </div>
+    </aside>
+  </body>
+</html>
