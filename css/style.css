@@ -1,3 +1,5 @@
+/* Var*/
+
 :root {
   --white: #ffffff;
   --black: #000000;
@@ -10,6 +12,7 @@
   --lg: 1.8rem;
 }
 
+/* General */
 * {
   font-size: 62.5%;
 }
@@ -29,9 +32,7 @@ body {
   margin: 0;
 }
 
-.inactive {
-  display: none;
-}
+/* Navbar (General)*/
 
 nav {
   display: flex;
@@ -108,6 +109,8 @@ nav {
 
   right: 0;
 }
+
+/* Desktop Menu */
 .desktop-menu {
   width: 10rem;
   height: auto;
@@ -155,6 +158,57 @@ nav {
   font-size: var(--sm);
 }
 
+/* Mobile menu */
+
+.mobile-menu {
+  height: 100%;
+  position: absolute;
+  top: 6rem;
+}
+
+.account-info {
+  height: 100%;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+  font-size: var(--md);
+
+  /* margin-bottom: 2.4rem; */
+}
+
+.mobile-menu ul {
+  padding: 0;
+  margin: 2.4rem 0;
+  list-style: none;
+}
+
+.mobile-menu .access-links ul:nth-child(1) {
+  border-bottom: 1px solid var(--very-light-pink);
+}
+
+.mobile-menu ul li {
+  margin-bottom: 2.4rem;
+}
+
+.mobile-menu .email {
+  font-size: var(--sm);
+  font-weight: 300;
+}
+
+.mobile-menu .sing-out {
+  color: var(--hospital-green);
+  font-size: var(--sm);
+}
+
+.inactive {
+  display: none;
+}
+
+/* Media queries */
+
 @media (max-width: 640px) {
   .menu {
     display: block;
@@ -165,6 +219,16 @@ nav {
   }
 
   .navbar-email {
+    display: none;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobile-menu {
     display: none;
   }
 }
