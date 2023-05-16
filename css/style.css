@@ -306,12 +306,69 @@ nav {
   right: 0;
   border: 1px solid var(--very-light-pink);
   border-radius: 4%;
+  background-color: var(--white);
 }
 
 @media (max-width: 640px) {
   .product-detail {
     width: 100%;
   }
+}
+
+/* principal */
+
+.cards-container {
+  display: grid;
+  /* repeat puede hacer lo mismo que poner 1fr 1fr, dentro de repeat 
+      se colocan dos parametros, el primero es la cantidad de columnas y el segundo es el
+      size de columnas, por ejemplo 2, 1fr (dos veces una fraccion = 1fr 1fr)*/
+  gap: 3rem 3rem;
+  place-content: center;
+  margin-top: 3rem;
+
+  /* Autofill hace que las que alcancen pues, lo otro es el size */
+  grid-template-columns: repeat(auto-fill, 24rem);
+}
+
+.product-card {
+  width: 24rem;
+}
+
+.product-card img {
+  width: 24rem;
+  height: 24rem;
+  border-radius: 2rem;
+
+  /* Esta propiedad hace que la imagen intente mostrar todo su size independientemente
+      del width o height asignado por el desarrollador */
+  object-fit: cover;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.product-info div p:nth-child(1) {
+  font-weight: bold;
+  font-size: var(--md);
+  margin: 0 0 0.4rem 0;
+}
+
+.product-info div p:nth-child(2) {
+  font-size: var(--sm);
+  color: var(--very-light-pink);
+}
+
+.product-info figure {
+  margin: 0;
+}
+
+.product-info figure img {
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 .inactive {
@@ -341,5 +398,20 @@ nav {
 @media (min-width: 641px) {
   .mobile-menu {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, 14rem);
+  }
+
+  .product-card {
+    width: 14rem;
+  }
+
+  .product-card img {
+    width: 14rem;
+    height: 14rem;
   }
 }
