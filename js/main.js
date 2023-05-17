@@ -5,53 +5,74 @@ const desktop_menu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const shoppingCart_li = document.querySelector('.navbar-shopping-cart');
-const aside = document.querySelector('.product-detail');
+const shopping_cart_container = document.querySelector('#shopping-cart-container');
 const cards_container = document.querySelector('.cards-container');  
-
+const product_detail_container = document.querySelector('#product-detail');
+const product_detail_close_icon = document.querySelector('.product-detail-close')
 //Variables declaradas en este archivo
 const product_list = [];
 
 // Eventos de HTML
 navbar_email.addEventListener('click', toggleDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
-shoppingCart_li.addEventListener('click', toggleShoppingCartAside);
-
+shoppingCart_li.addEventListener('click', toggleShoppingCartshopping_cart_container);
+product_detail_close_icon.addEventListener('click', close_product_detail_aside)
 //Funciones
 
 function toggleDesktopMenu(){
-    let isAsideShoppingClosed = aside.classList.contains('inactive');
+    let isshopping_cart_containerShoppingClosed = shopping_cart_container.classList.contains('inactive');
     
-    if(!isAsideShoppingClosed){
-        aside.classList.add('inactive');
+    if(!isshopping_cart_containerShoppingClosed){
+        shopping_cart_container.classList.add('inactive');
     }
 
     desktop_menu.classList.toggle('inactive');
 }
 
 function toggleMobileMenu() {
-    let isAsideShoppingClosed = aside.classList.contains('inactive');
-    
-    if(!isAsideShoppingClosed){
-        aside.classList.add('inactive');
+    let isShopping_cart_containerShoppingClosed = shopping_cart_container.classList.contains('inactive');
+    let isProductDetailClosed = product_detail_container.classList.contains('inactive');
+
+    if(!isShopping_cart_containerShoppingClosed){
+        shopping_cart_container.classList.add('inactive');
+    }
+
+    if(!isProductDetailClosed){
+        product_detail_container.classList.add('inactive');
     }
 
     mobileMenu.classList.toggle('inactive');
 }
 
-function toggleShoppingCartAside(){
+function toggleShoppingCartshopping_cart_container(){
 
     let isMobileMenuClosed = mobileMenu.classList.contains('inactive');
-    let isDekstopMenuClosed = desktop_menu.classList.contains('inactive');
+    let isProduct_detail_containerClosed = product_detail_container.classList.contains('inactive');
     
     if(!isMobileMenuClosed){
         mobileMenu.classList.add('inactive');
     }
 
-    if(!isDekstopMenuClosed){
-        desktop_menu.classList.add('inactive');
+    if(!isProduct_detail_containerClosed){
+        product_detail_container.classList.add('inactive');
     }
 
-    aside.classList.toggle('inactive');
+    shopping_cart_container.classList.toggle('inactive');
+}
+
+function open_product_detail_aside(){
+    let isShopping_cart_containerShoppingClosed = shopping_cart_container.classList.contains('inactive');
+    
+
+    product_detail_container.classList.remove('inactive');
+    if(!isShopping_cart_containerShoppingClosed){
+        shopping_cart_container.classList.add('inactive');
+    }
+    
+}
+
+function close_product_detail_aside(){
+    product_detail_container.classList.add('inactive');
 }
 
 product_list.push({
@@ -114,7 +135,9 @@ function render_products(arr){
         product_info.append(product_info_div, product_info_figrue);
         product_card.append(product_img, product_info);
         cards_container.append(product_card);
-    
+
+        product_img.addEventListener('click',open_product_detail_aside);
+        
     };
 }
 
